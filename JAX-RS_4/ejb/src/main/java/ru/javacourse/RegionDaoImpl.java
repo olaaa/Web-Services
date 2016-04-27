@@ -15,7 +15,7 @@ import java.util.List;
 public class RegionDaoImpl implements RegionDao {
 
     @PersistenceContext(unitName = "testPU")
-    private EntityManager em;
+    private EntityManager em; // jpa
 
 
     @Override

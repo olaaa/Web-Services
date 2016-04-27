@@ -1,17 +1,15 @@
 package ru.javacourse.rest.service;
 
-import ru.javacourse.RegionDaoImpl;
 import ru.javacourse.dao.RegionDao;
 import ru.javacourse.model.Region;
 
 import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.Serializable;
 import java.net.URISyntaxException;
-import java.util.*;
+import java.util.List;
 
 /**
  * Author: Georgy Gobozov
@@ -20,8 +18,6 @@ import java.util.*;
 
 @Path("/regions")
 public class RegionService {
-
-
     @EJB
     RegionDao regionDao;
 
@@ -59,8 +55,4 @@ public class RegionService {
         Serializable id = regionDao.createRegion(new Region(name));
         return regionDao.getRegion((Integer) id);
     }
-
-
-
-
 }

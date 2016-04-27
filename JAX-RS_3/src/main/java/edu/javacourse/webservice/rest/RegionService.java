@@ -5,8 +5,6 @@ import model.Region;
 import javax.annotation.PostConstruct;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.io.File;
 import java.net.URISyntaxException;
 import java.util.*;
 
@@ -31,7 +29,7 @@ public class RegionService {
 
 
     @GET
-    @Path("/id/{id}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_XML)
     public Region getRegion(@PathParam("id") String id) {
         Region region = regions.get(id);
@@ -58,6 +56,7 @@ public class RegionService {
     @POST
     @Path("/add")
     @Produces(MediaType.APPLICATION_XML)
+    // принимает! в параметре метода - объект бл
     @Consumes(MediaType.APPLICATION_XML)
     public Collection<Region> addRegion(Region region) throws URISyntaxException {
         int next = regions.size() + 1;
@@ -66,7 +65,7 @@ public class RegionService {
     }
 
     @DELETE
-    @Path("/delete/{id}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_XML)
     public Collection<Region> removeCity(@PathParam("id") String id) throws URISyntaxException {
         regions.remove(id);

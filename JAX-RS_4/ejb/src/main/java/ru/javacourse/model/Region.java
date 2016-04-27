@@ -11,8 +11,10 @@ import java.io.Serializable;
 @XmlRootElement
 @Entity
 @Table(name = "jc_region")
+
+// именованный запрос
 @NamedQueries({
-        @NamedQuery(name = "Region.GetAll", query = "select r from Region r")
+        @NamedQuery(name = "Region.GetAll", query = "select r from Region r") // jpa запрос
 })
 public class Region implements Serializable {
 

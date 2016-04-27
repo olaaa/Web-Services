@@ -22,7 +22,7 @@ public class RestService {
     @GET
     @Path("/query") // query parameter
     public Response queryParams(
-                                @QueryParam("from") int from,
+                                @QueryParam("from") int from, // дефолтное значение - 0
                                 @QueryParam("to") @DefaultValue("10") int to){
         return Response.status(200).entity("from = " + from + " to = " + to).build();
     }

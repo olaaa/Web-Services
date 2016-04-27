@@ -16,6 +16,7 @@ public class RestService {
 
     @GET
     @Path("/file")
+//    какого типа контент будет отдавать нащ метод Content type
     @Produces("text/plain")
     public Response getFile() throws URISyntaxException {
 
@@ -31,6 +32,7 @@ public class RestService {
     public Response getImage() throws URISyntaxException {
         File file = new File(getClass().getResource("logo.png").toURI());
         Response.ResponseBuilder response = Response.ok(file);
+        // header при передаче файла
         response.header("Content-Disposition", "attachment; filename='" + file.getName()+ "'");
         return response.build();
     }
