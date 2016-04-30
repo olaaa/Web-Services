@@ -23,7 +23,7 @@ public class RegionService {
 
 
     @GET
-    @Path("/id/{id}")
+    @Path("/{id}")
     public Response getRegion(@PathParam ("id") String id) {
         boolean isXml = false;
 

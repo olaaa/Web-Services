@@ -40,6 +40,4 @@ public class RegionDaoImpl implements RegionDao {
         region = em.merge(region);
         em.remove(region);
     }
-
-
 }
